@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int tc = sc.nextInt();
+        while (tc-- > 0) {
+            int n = sc.nextInt();
+            int x = sc.nextInt();
+            int max_dis = 0, start_point = 0;
+            for(int i = 0; i<n; i++){
+                int a = sc.nextInt();
+                max_dis = Math.max(max_dis, a-start_point);
+                start_point = a;
+            }
+            max_dis = Math.max(max_dis, 2*(x-start_point));
+            System.out.println(max_dis);
+        }
+    }
+}
